@@ -286,7 +286,7 @@ async def request_password_reset_token(
 
     reset_link = f"http://127.0.0.1/accounts/password-reset/?email={data.email}&token={reset_token.token}"
     background_tasks.add_task(
-        email_sender.send_password_reset_complete_email,
+        email_sender.send_password_reset_email,
         str(data.email),
         reset_link
     )
